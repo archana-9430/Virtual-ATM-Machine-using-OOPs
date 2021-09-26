@@ -72,30 +72,30 @@ int main() {
 
     //creating instance of the class.
     atm user1;
-    user1.setData(123456, "Archana", 111, 45678900.89, "9999911111");
+    user1.setData(123456, "Archana", 111, 45678.89, "9999911111");
     do {
         system("cls");
         cout << endl << "*********** Welcome to Virtual ATM *************" << endl;
         cout << endl << "Enter Your Account Number: "; 
-        cin >> enterPIN;
+        cin >> enterAccountNum;
 
         cout << endl << "Enter PIN: ";
         cin >> enterPIN;
 
-        if((enterAccountNum == user1.getAccountNum()) && (enterPIN == user1.getPIN())){
+       if((enterAccountNum == user1.getAccountNum()) && (enterPIN == user1.getPIN())){
             do {                                //User Interface of the ATM
                 int amount = 0, choice = 0;
                 string oldMob, newMob;
                // system("cls");
 
-                cout << endl << "********* Welcome to Virtual ATM" << endl;
+                cout << endl << "********* Welcome to Virtual ATM *********" << endl;
                 cout << endl << "Select an option: ";
                 cout << endl << "1. Check Balance: ";
                 cout << endl << "2. Cash Withdrawal";
                 cout << endl << "3. Show User Details";
                 cout << endl << "4. Update Mobile Number";
                 cout << endl << "5. Exit";
-
+                cout << "\n\n";
                 cin >> choice;
 
                 switch(choice) {
