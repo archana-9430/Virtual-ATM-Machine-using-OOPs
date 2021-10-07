@@ -46,10 +46,10 @@ class atm {
             if(prevNum == mobNum){
                 mobNum = newNum;
                 cout << endl << "Mobile Number Updated Successfully";
-                _getch();
+                getch();
             } else {
                 cout << endl << "Invalid Credentials";
-                _getch();
+                getch();
             }
         }
         void cashWithdraw(int amountA) {
@@ -57,11 +57,17 @@ class atm {
                 balance -= amountA;
                 cout << endl << "Please Collect Your Cash";
                 cout << endl << "Available Balance: " << balance;
-                _getch();
+                getch();
             } else {
                 cout << endl << "Invalid Credentials OR Insufficient Balance";
-                _getch();
+                getch();
             }
+        }
+        void cashDeposit(int amountA) {              
+                balance += amountA;
+                cout << endl << "Cash Deposited Successfully";
+                cout << endl << "Available Balance: " << balance;
+                getch();
         }
 };
 
@@ -86,22 +92,23 @@ int main() {
             do {                                //User Interface of the ATM
                 int amount = 0, choice = 0;
                 string oldMob, newMob;
-               // system("cls");
+                system("cls");
 
                 cout << endl << "********* Welcome to Virtual ATM *********" << endl;
                 cout << endl << "Select an option: ";
                 cout << endl << "1. Check Balance: ";
                 cout << endl << "2. Cash Withdrawal";
-                cout << endl << "3. Show User Details";
-                cout << endl << "4. Update Mobile Number";
-                cout << endl << "5. Exit";
+                cout << endl << "3. Cash Deposit";
+                cout << endl << "4. Show User Details";
+                cout << endl << "5. Update Mobile Number";
+                cout << endl << "6. Exit";
                 cout << "\n\n";
                 cin >> choice;
 
                 switch(choice) {
                     case 1:
                         cout << endl << "Your Bank balance is: " << user1.getBalance();
-                        _getch();
+                        getch();
                         break;
 
                     case 2:
@@ -111,15 +118,20 @@ int main() {
                         break;
 
                     case 3:
+                        cout << "Please Enter the Cash to be Deposited: ";
+                        cin >> amount;
+                        user1.cashDeposit(amount);
+
+                    case 4:
                         cout << endl << "************* User Details are: **************";
                         cout << endl << "-> Account Number: " << user1.getAccountNum();
                         cout << endl << "-> Name: " << user1.getUserName();
                         cout << endl << "-> Balance: " << user1.getBalance();
                         cout << endl << "-> Mobile Number: " << user1.getMobNum();
-                        _getch();
+                        getch();
                         break;
 
-                    case 4:
+                    case 5:
                         cout << endl << "Enter Old Mobile Number: ";
                         cin >> oldMob;
                         cout << endl << "Enter New Mobile Number: ";
@@ -128,7 +140,7 @@ int main() {
                         user1.setMobNum(oldMob, newMob);
                         break;
                     
-                    case 5:
+                    case 6:
                         exit(0);
 
                     default: 
