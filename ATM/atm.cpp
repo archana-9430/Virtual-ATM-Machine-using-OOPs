@@ -1,5 +1,4 @@
-#include <conio.h>
-#include <iostream>
+#include <bits/stdc++.h>
 #include <string>
 
 using namespace std;
@@ -74,7 +73,7 @@ class atm {
 int main() {
     int choice = 0, enterPIN = 0;
     long int enterAccountNum = 0;
-    //system("cls");  //Automatically clear the screen.
+    system("cls");  //Automatically clear the screen.
 
     //creating instance of the class.
     atm user1;
